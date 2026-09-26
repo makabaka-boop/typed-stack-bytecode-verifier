@@ -1,0 +1,6 @@
+[
+  { "op": "PUSH", "value": true },
+  { "op": "PUSH", "value": false },
+  { "op": "ADD" },
+  { "op": "HALT" }
+]

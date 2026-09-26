@@ -1,0 +1,19 @@
+# Docker Compose 的 vmcheck 服务运行同一入口（dist/cli.js）。
+#
+# 常用：
+#   docker compose build vmcheck
+#   docker compose run --rm vmcheck samples/ok.json
+#   docker compose run --rm vmcheck samples/bad-loop-grows.json
+#   cat program.json | docker compose run --rm -T vmcheck
+#
+# 镜像内跑测试对拍：
+#   docker compose run --rm --entrypoint npm vmcheck test
+services:
+  vmcheck:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: vmcheck:latest
+    # 默认打印帮助；实际校验时把 JSON 文件路径或标准输入交给同一入口
+    command: ["--help"]
+    stdin_open: true

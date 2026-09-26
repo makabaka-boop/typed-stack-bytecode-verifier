@@ -1,0 +1,9 @@
+[
+  { "op": "PUSH", "value": true },
+  { "op": "PUSH", "value": true },
+  { "op": "JUMP_IF_FALSE", "target": 6 },
+  { "op": "PUSH", "value": true },
+  { "op": "PUSH", "value": 1 },
+  { "op": "JUMP", "target": 1 },
+  { "op": "HALT" }
+]
